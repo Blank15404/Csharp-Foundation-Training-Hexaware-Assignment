@@ -90,40 +90,16 @@ namespace Task_7_SIS
 
                 if (choice == 1)
                 {
-                    try
-                    {
-                        Console.Write("\nEnter student ID (1 or 2): ");
-                        int studentId = int.Parse(Console.ReadLine());
-
-                        Console.Write("Enter course ID (101 or 102): ");
-                        int courseId = int.Parse(Console.ReadLine());
-
-                        sis.EnrollStudent(studentId, courseId);
-                    }
-                    catch (StudentNotFoundException ex)
-                    {
-                        Console.WriteLine($"\nERROR: {ex.Message}");
-                    }
-                    catch (CourseNotFoundException ex)
-                    {
-                        Console.WriteLine($"\nERROR: {ex.Message}");
-                    }
-                    catch (DuplicateEnrollmentException ex)
-                    {
-                        Console.WriteLine($"\nERROR: {ex.Message}");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"\nUNEXPECTED ERROR: {ex.Message}");
-                    }
+                    Console.Write("\nEnter student ID (1 or 2): ");
+                    int studentId = int.Parse(Console.ReadLine());
+                    Console.Write("Enter course ID (101 or 102): ");
+                    int courseId = int.Parse(Console.ReadLine());
+                    sis.EnrollStudent(studentId, courseId);
                 }
                 else
                 {
                     Console.WriteLine("Invalid choice!");
                 }
-
-                Console.WriteLine("\nPress any key to continue...");
-                Console.ReadKey();
             }
         }
     }
