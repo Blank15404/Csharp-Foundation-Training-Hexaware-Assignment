@@ -293,21 +293,21 @@ namespace SIS
         {
             SIS sis = new SIS();
 
-            Teacher t1 = new Teacher(101, "John", "Smith", "john.smith@university.edu");
-            Teacher t2 = new Teacher(102, "Emily", "Johnson", "emily.johnson@university.edu");
+            Teacher t1 = new Teacher(1001, "Ram", "CHaran", "ram@university.edu");
+            Teacher t2 = new Teacher(1002, "Hari", "Amar", "hari@university.edu");
             sis.Teachers.Add(t1);
             sis.Teachers.Add(t2);
 
-            Course c1 = new Course(1, "Introduction to Programming", "CS101");
-            Course c2 = new Course(2, "Database Systems", "CS202");
+            Course c1 = new Course(101, "Mathematics", "MATH101");
+            Course c2 = new Course(102, "Computer Science", "CS102");
             sis.Courses.Add(c1);
             sis.Courses.Add(c2);
 
             sis.AssignTeacherToCourse(t1, c1);
             sis.AssignTeacherToCourse(t2, c2);
 
-            Student s1 = new Student(1001, "Alice", "Williams", new DateTime(2000, 5, 15), "alice@student.edu", "555-1234");
-            Student s2 = new Student(1002, "Bob", "Brown", new DateTime(1999, 8, 22), "bob@student.edu", "555-5678");
+            Student s1 = new Student(1, "Manish", "Sivakumar", new DateTime(2000, 5, 15), "manish@student.edu", "1234567890");
+            Student s2 = new Student(2, "Ismail", "Ali", new DateTime(2001, 3, 22), "ismail@student.edu", "2345678901");
             sis.Students.Add(s1);
             sis.Students.Add(s2);
 
