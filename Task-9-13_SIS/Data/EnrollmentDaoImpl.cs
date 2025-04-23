@@ -17,14 +17,12 @@ namespace Task_7_11_SIS.Data
             SqlCommand cmd = null;
             int rowsAffected = 0;
 
-            // First check if the student is already enrolled in the course
             string checkQuery = "select count(*) from Enrollments where StudentId = @StudentId and CourseId = @CourseId";
 
             try
             {
                 using (con = DBUtility.GetConnection())
                 {
-                    // Check for existing enrollment
                     cmd = new SqlCommand(checkQuery, con);
                     cmd.Parameters.AddWithValue("@StudentId", studentId);
                     cmd.Parameters.AddWithValue("@CourseId", courseId);
@@ -35,9 +33,8 @@ namespace Task_7_11_SIS.Data
                         throw new SISException($"Student {studentId} is already enrolled in course {courseId}.");
                     }
 
-                    // If not enrolled, proceed with enrollment
-                    string insertQuery = @"INSERT INTO Enrollments (EnrollmentId, StudentId, CourseId, EnrollmentDate) 
-                                          VALUES (@EnrollmentId, @StudentId, @CourseId, @EnrollmentDate)";
+                    string insertQuery = @"insert into Enrollments (EnrollmentId, StudentId, CourseId, EnrollmentDate) 
+                                          values (@EnrollmentId, @StudentId, @CourseId, @EnrollmentDate)";
 
                     cmd = new SqlCommand(insertQuery, con);
                     cmd.Parameters.AddWithValue("@EnrollmentId", enrollmentId);
