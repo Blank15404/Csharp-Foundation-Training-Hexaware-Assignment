@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CARS_CaseStudy.entity;
 
@@ -13,7 +13,8 @@ namespace CARS_CaseStudy.dao
         Report GenerateIncidentReport(Report report);
         Case CreateCase(string caseDescription, List<Incident> incidents, int caseId);
         Case GetCaseDetails(int caseId);
-        bool UpdateCaseDetails(Case caseObj);
+        public Case UpdateCaseDetails(Case caseObj);
         List<Case> GetAllCases();
+
     }
 }
