@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,5 @@ namespace CARS_CaseStudy.exception
 
         public IncidentNumberNotFoundException(string message) : base(message) { }
 
-        public IncidentNumberNotFoundException(string message, Exception innerException)
-            : base(message, innerException) { }
     }
 }
