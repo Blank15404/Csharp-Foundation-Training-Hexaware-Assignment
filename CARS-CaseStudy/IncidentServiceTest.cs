@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using CARS_CaseStudy.dao;
 using CARS_CaseStudy.entity;
 using CARS_CaseStudy.exception;
@@ -17,9 +17,9 @@ namespace CARSTestProject
         }
 
         [Test]
-        public void CreateIncident_ValidData_ReturnsTrue()
+        public void CreateIncidentValidDataReturnsTrue()
         {
-            var incident = new Incident(3000, "Theft", new DateTime(2023, 1, 1),
+            var incident = new Incident(3007, "Theft", new DateTime(2023, 1, 1),
                            "Main St", "Stolen wallet", "Open", 1001, 2001);
 
             bool result = incidentService.CreateIncident(incident);
@@ -27,7 +27,7 @@ namespace CARSTestProject
         }
 
         [Test]
-        public void UpdateIncidentStatus_ValidId_ReturnsTrue()
+        public void UpdateIncidentStatusValidIdReturnsTrue()
         {
             incidentService.CreateIncident(
                 new Incident(3002, "Burglary", new DateTime(2023, 1, 2),
@@ -38,7 +38,7 @@ namespace CARSTestProject
         }
 
         [Test]
-        public void GetIncidentsInDateRange_ReturnsCorrectIncidents()
+        public void GetIncidentsInDateRangeReturnsCorrectIncidents()
         {
             incidentService.CreateIncident(
                 new Incident(3003, "Vandalism", new DateTime(2023, 1, 3),
@@ -52,7 +52,7 @@ namespace CARSTestProject
         }
 
         [Test]
-        public void SearchIncidents_ReturnsMatchingResults()
+        public void SearchIncidentsReturnsMatchingResults()
         {
             incidentService.CreateIncident(
                 new Incident(3004, "Assault", new DateTime(2023, 1, 4),
