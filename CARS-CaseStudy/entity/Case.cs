@@ -10,6 +10,7 @@ namespace CARS_CaseStudy.entity
     {
         public int CaseID { get; set; }
         public string CaseDescription { get; set; }
-        public List<Incident> Incidents { get; set; } = new List<Incident>();
+        public List<Incident> IncidentIDs { get; set; } = new List<Incident>();
+        public DateTime CreatedDate { get; set; }
     }
 }
